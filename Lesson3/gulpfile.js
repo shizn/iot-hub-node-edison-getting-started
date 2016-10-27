@@ -10,7 +10,7 @@ var receiveMessages = doesReadStorage ? require('./azure-table.js').readAzureTab
 var cleanup = doesReadStorage ? require('./azure-table.js').cleanup : require('./iot-hub.js').cleanup;
 
 /**
- * Setup common gulp tasks: init, install-tools, deploy, run
+ * Setup common gulp tasks: init, deploy, run
  */
 require('gulp-common')(gulp, 'edison-node', {
   appName: 'lesson-3',

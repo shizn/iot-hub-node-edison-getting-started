@@ -1,0 +1,12 @@
+{
+  "name": "edison-nodejs-lesson-4",
+  "version": "1.0.0",
+  "description": "nodejs code that blinks the LED connected to Intel Edison board when receiving messages from Azure IoT Hub",
+  "main": "app.js",
+  "license": "MIT",
+  "dependencies": {
+    "azure-iot-device": "^1.0.10",
+    "azure-iot-device-amqp": "^1.0.10",
+    "mraa": "^1.4.0"
+  }
+}
