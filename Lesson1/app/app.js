@@ -3,7 +3,7 @@
 */
 'use strict';
 
-var m = require('mraa'); //require mraa
+var m = require('mraa');
 
 // GPIO pin of the LED
 var CONFIG_PIN = 13;
