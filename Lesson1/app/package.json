@@ -1,0 +1,11 @@
+{
+  "name": "edison-nodejs-lesson-1",
+  "version": "1.0.0",
+  "description": "A sample Node.js app that blinks the LED connected to Intel Edison board",
+  "main": "app.js",
+  "author": "Microsoft Corp.",
+  "license": "MIT",
+  "dependencies": {
+    "mraa": "^1.4.0"
+  }
+}
