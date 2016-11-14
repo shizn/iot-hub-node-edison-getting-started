@@ -140,7 +140,7 @@
                 }
               ]
             },
-            "test_data": "{ 'deviceId': 'edison', 'messageId': '1' }"
+            "test_data": "{ 'deviceId': 'myinteledison', 'messageId': '1' }"
           }
         }
       ],
