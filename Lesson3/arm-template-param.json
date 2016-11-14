@@ -3,10 +3,10 @@
   "contentVersion": "1.0.0.0",
   "parameters": {
     "iotHubName": {
-      "value": "[your IoT Hub name]"
+      "value": "hub-zzj"
     },
     "resoucePrefix": {
-      "value": "[prefix string for new resources]"
+      "value": "zzj12"
     },
     "functionSku": {
       "value": "Free"
