@@ -4,11 +4,14 @@
 'use strict';
 
 var gulp = require('gulp');
+var gulpCommon = require('gulp-common');
+var helper = gulpCommon.all;
 
+var configPostfix = "edison";
 /**
  * Setup common gulp tasks: init, deploy, run
  */
-require('gulp-common')(gulp, 'edison-node', {
+gulpCommon(gulp, 'edison-node', {
   appName: 'lesson-4',
   configTemplate: {
     "device_host_name_or_ip_address": "[device hostname or IP adress]",
@@ -17,7 +20,8 @@ require('gulp-common')(gulp, 'edison-node', {
     "iot_hub_connection_string": "[IoT hub connection string]",
     "iot_device_connection_string": "[IoT device connection string]"
   },
-  configPostfix: 'edison'
+  configPostfix: configPostfix,
+  appParams: ' "' + helper.getDeviceConnectionString(configPostfix) + '"'
 });
 
 /**

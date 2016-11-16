@@ -4,15 +4,18 @@
 'use strict';
 
 var gulp = require('gulp');
+var gulpCommon = require('gulp-common');
+var helper = gulpCommon.all;
 
 var doesReadStorage = require('get-gulp-args')()['read-storage'];
 var receiveMessages = doesReadStorage ? require('./azure-table.js').readAzureTable : require('./iot-hub.js').readIoTHub;
 var cleanup = doesReadStorage ? require('./azure-table.js').cleanup : require('./iot-hub.js').cleanup;
 
+var configPostfix = "edison";
 /**
  * Setup common gulp tasks: init, deploy, run
  */
-require('gulp-common')(gulp, 'edison-node', {
+gulpCommon(gulp, 'edison-node', {
   appName: 'lesson-3',
   configTemplate: {
     "device_host_name_or_ip_address": "[device hostname or IP adress]",
@@ -23,7 +26,8 @@ require('gulp-common')(gulp, 'edison-node', {
     "azure_storage_connection_string": "[Azure storage connection string]",
     "iot_hub_consumer_group_name": "cg1"
   },
-  configPostfix: 'edison'
+  configPostfix: configPostfix,
+  appParams: ' "' + helper.getDeviceConnectionString(configPostfix) + '"'
 });
 
 /**
