@@ -7,21 +7,11 @@ var m = require('mraa');
 var Message = require('azure-iot-device').Message;
 // Use AMQP client to communicate with IoT Hub
 var clientFromConnectionString = require('azure-iot-device-amqp').clientFromConnectionString;
-
-// Get device id from IoT device connection string
-function getDeviceId(connectionString) {
-  var elements = connectionString.split(';');
-  var dict = {};
-  for (var i = 0; i < elements.length; i++) {
-    var kvp = elements[i].split('=');
-    dict[kvp[0]] = kvp[1];
-  }
-  return dict.DeviceId;
-}
+var ConnectionString = require('azure-iot-device').ConnectionString;
 
 // Read device connection string from command line arguments
 var iotDeviceConnectionString = process.argv[2];
-var deviceId = getDeviceId(iotDeviceConnectionString);
+var deviceId = ConnectionString.parse(iotDeviceConnectionString).DeviceId;
 
 // GPIO pin of the LED
 var CONFIG_PIN = 13;
